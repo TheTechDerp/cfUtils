@@ -1,5 +1,6 @@
-package com.cobbleforest.cfUtils;
+package com.cobbleforest.cfUtils.Handlers;
 
+import com.cobbleforest.cfUtils.Core;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -28,5 +29,9 @@ public class PermissionHandler {
             retVal = permissionProvider.getProvider();
         }
         return retVal;
+    }
+
+    public Permission getPermission() {
+        return permission;
     }
 }

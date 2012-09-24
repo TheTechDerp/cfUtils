@@ -1,5 +1,6 @@
-package com.cobbleforest.cfUtils;
+package com.cobbleforest.cfUtils.Handlers;
 
+import com.cobbleforest.cfUtils.Core;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
@@ -28,5 +29,9 @@ public class MoneyHandler {
         }
 
         return null;
+    }
+
+    public Economy getEconomy() {
+        return economy;
     }
 }

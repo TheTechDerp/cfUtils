@@ -1,5 +1,6 @@
-package com.cobbleforest.cfUtils;
+package com.cobbleforest.cfUtils.Objects;
 
+import com.cobbleforest.cfUtils.Core;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
