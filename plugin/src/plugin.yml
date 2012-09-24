@@ -1,0 +1,10 @@
+author: Benjamin James Harrison-Sims
+main: com.cobbleforest.cfUtils
+name: cfUtils
+startup: postworld
+version: '1'
+commands:
+    xbank:
+        description: Description
+        usage: /<command> [arguments]
+depend: [Vault]
