@@ -4,7 +4,7 @@ name: cfUtils
 startup: postworld
 version: '1'
 commands:
-    cfreload:
+    freeze:
         description: Description
         usage: /<command> [arguments]
 depend: [Vault]

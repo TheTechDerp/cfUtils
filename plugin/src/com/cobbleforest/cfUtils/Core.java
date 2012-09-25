@@ -2,9 +2,11 @@ package com.cobbleforest.cfUtils;
 
 import com.cobbleforest.cfUtils.Handlers.MoneyHandler;
 import com.cobbleforest.cfUtils.Handlers.PermissionHandler;
-import com.cobbleforest.cfUtils.Listeners.LoginListener;
+import com.cobbleforest.cfUtils.Listeners.CobbleListener;
+import com.cobbleforest.cfUtils.commands.FreezeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
@@ -16,12 +18,14 @@ public class Core extends JavaPlugin {
     Logger log;
     MoneyHandler moneyHandler;
     PermissionHandler permissionHandler;
+    ArrayList<String> frozenPlayers = new ArrayList<String>();
 
     @Override
     public void onEnable() {
         log = getLogger();
         setupHandlers();
-        getServer().getPluginManager().registerEvents(new LoginListener(this), this);
+        getServer().getPluginManager().registerEvents(new CobbleListener(this), this);
+        getCommand("freeze").setExecutor(new FreezeCommand(this));
     }
 
     @Override
@@ -49,5 +53,9 @@ public class Core extends JavaPlugin {
 
     public PermissionHandler getPermissionHandler() {
         return permissionHandler;
+    }
+
+    public ArrayList<String> getFrozenPlayers() {
+        return frozenPlayers;
     }
 }
