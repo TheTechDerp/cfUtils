@@ -3,6 +3,7 @@ package com.cobbleforest.cfUtils.commands;
 import com.cobbleforest.cfUtils.Core;
 import com.cobbleforest.cfUtils.Objects.CommandBase;
 import net.milkbowl.vault.permission.Permission;
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -29,6 +30,13 @@ public class FreezeCommand extends CommandBase {
                     } else {
                         core.getFrozenPlayers().add(playertofreeze);
                     }
+
+                    for (Player player1 : core.getServer().getOnlinePlayers()) {
+                        if (permission.getPrimaryGroup(player1).equalsIgnoreCase("Admin")) {
+                            player1.sendMessage(ChatColor.GRAY + "[CF]: Freeze toggled on " + playertofreeze);
+                        }
+                    }
+
                 }
             }
 

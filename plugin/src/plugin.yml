@@ -1,5 +1,5 @@
 author: Benjamin James Harrison-Sims
-main: com.cobbleforest.cfUtils
+main: com.cobbleforest.cfUtils.Core
 name: cfUtils
 startup: postworld
 version: '1'
