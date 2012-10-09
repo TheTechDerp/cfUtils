@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  */
 public class Core extends JavaPlugin {
     Logger log;
+    Publisher publisher;
     MoneyHandler moneyHandler;
     PermissionHandler permissionHandler;
     ArrayList<String> frozenPlayers = new ArrayList<String>();
@@ -24,6 +25,7 @@ public class Core extends JavaPlugin {
     public void onEnable() {
         log = getLogger();
         setupHandlers();
+        publisher = new Publisher(this);
         getServer().getPluginManager().registerEvents(new CobbleListener(this), this);
         getCommand("freeze").setExecutor(new FreezeCommand(this));
     }
@@ -57,5 +59,9 @@ public class Core extends JavaPlugin {
 
     public ArrayList<String> getFrozenPlayers() {
         return frozenPlayers;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
     }
 }
